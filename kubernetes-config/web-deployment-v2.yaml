@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
  labels:
    app: events-web
- name: events-web
+ name: events-web-v2
 spec:
- replicas: 2
+ replicas: 1
  selector:
    matchLabels:
      app: events-web
-     ver: v1.0
+     ver: v2.0
  template:
    metadata:
      labels:
        app: events-web
-       ver: v1.0
+       ver: v2.0
    spec:
      containers:
-     - image: apacuser118/events-website:v1.0
+     - image: apacuser118/events-website:v2.0
        name: events-web
        ports:
        - containerPort: 8080
