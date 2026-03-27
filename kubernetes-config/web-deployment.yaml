@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ labels:
+   app: events-web
+ name: events-web
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: events-web
+     ver: v1.0
+ template:
+   metadata:
+     labels:
+       app: events-web
+       ver: v1.0
+   spec:
+     containers:
+     - image: apacuser118/events-website:v1.0
+       name: events-web
+       ports:
+       - containerPort: 8080
+
