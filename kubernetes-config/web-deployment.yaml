@@ -21,4 +21,6 @@ spec:
        name: events-web
        ports:
        - containerPort: 8080
-
+       env:
+       - name: SERVER
+         value: "http://events-api-svc:8082"
